@@ -1,0 +1,55 @@
+{
+  "name": "board-games-react-ui",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "phoenix": "rm -Rf node_modules && npm it",
+    "deploy": "suistudio build && surge public/ -d board-games-react-ui.surge.sh",
+    "co": "git-cz",
+    "lint:js": "node_modules/.bin/eslint --ext .js,.jsx src/",
+    "lint:sass": "node_modules/.bin/sass-lint src/**/*.scss -c -v",
+    "lint": "npm run lint:js && npm run lint:sass"
+  },
+  "repository": {
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@schibstedspain/suistudio-fatigue-dev": "github:SUI-Components/suistudio-fatigue-dev"
+  },
+  "peerDependencies": {
+    "react": "15",
+    "react-dom": "15"
+  },
+  "dependencies": {},
+  "config": {
+    "ghooks": {
+      "pre-commit": "echo \"Precommits...\"",
+      "commit-msg": "validate-commit-msg"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "refactor",
+        "test",
+        "docs",
+        "release",
+        "chore",
+        "perf"
+      ]
+    },
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.js"
+    }
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
+}
