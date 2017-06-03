@@ -1,0 +1,3 @@
+const notifyNumber = (number) => console.log('Choosen number was', number)
+
+return (<Dice6d notifyNumber={notifyNumber} />)
