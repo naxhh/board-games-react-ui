@@ -46,6 +46,9 @@
     },
     "cz-customizable": {
       "config": "./.cz-config.js"
+    },
+    "suistudio": {
+      "name": "Board Games UI"
     }
   },
   "pre-commit": [
